@@ -3,3 +3,51 @@
 ################################################################################
 
 /.vs/CopilotSnapshots
+
+# Ignore build output
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code settings
+.vscode/
+
+# Rider settings
+.idea/
+*.sln.iml
+
+# Windows image file caches
+Thumbs.db
+Desktop.ini
+
+# NuGet packages
+*.nupkg
+# The packages folder can be ignored if using PackageReference
+packages/
+
+# MSIX/ClickOnce publish
+*.appx
+*.appxbundle
+*.appxupload
+*.msix
+*.msixbundle
+*.msixupload
+
+# Test results
+TestResults/
+*.trx
+
+# Logs
+*.log
+
+# Others
+*.vs/
+_ReSharper*/
+
+# Local NuGet cache
+.nuget/

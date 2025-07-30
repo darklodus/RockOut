@@ -1,0 +1,36 @@
+﻿<Window x:Class="RockOut.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RockOut.UI"
+        mc:Ignorable="d"
+        Title="RockOut Equalizer" Height="450" Width="800">
+    <DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="10">
+            <Button Content="Open File" Command="{Binding OpenFileCommand}" Margin="0,0,10,0" />
+            <Button Content="Play" Command="{Binding PlayCommand}" Margin="0,0,10,0" />
+            <Button Content="Stop" Command="{Binding StopCommand}" />
+        </StackPanel>
+        <ItemsControl ItemsSource="{Binding Bands}" Margin="10">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="5" VerticalAlignment="Bottom">
+                        <Slider Minimum="-12" Maximum="12" Value="{Binding Gain, Mode=TwoWay}" Width="40" Height="200" Orientation="Vertical">
+                            <Slider.ToolTip>
+                                <TextBlock Text="{Binding Gain, StringFormat=F1}" />
+                            </Slider.ToolTip>
+                        </Slider>
+                        <TextBlock Text="{Binding Frequency}" HorizontalAlignment="Center"/>
+                        <TextBlock Text="dB" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </DockPanel>
+</Window>

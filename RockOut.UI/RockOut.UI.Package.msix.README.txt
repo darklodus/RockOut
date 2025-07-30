@@ -1,0 +1,9 @@
+# MSIX Packaging Project Placeholder
+
+This is a placeholder for the MSIX packaging project for RockOut.UI.
+
+- To package the application, open this project in Visual Studio.
+- Configure app identity, logo, and capabilities as needed.
+- Build the MSIX package for distribution or Microsoft Store submission.
+
+See README.md for more details.

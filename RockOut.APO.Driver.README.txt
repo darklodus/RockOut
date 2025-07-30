@@ -1,0 +1,3 @@
+// Placeholder for a C++ APO driver project for system-wide audio processing.
+// This project requires C++/WinRT and the Windows Driver Kit (WDK).
+// Not implemented in this solution; see CodingTasks.md and README.md for guidance.
