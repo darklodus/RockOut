@@ -31,7 +31,7 @@ public partial class MainWindow : Window
         var playback = new AudioPlaybackService();
         playback.Initialize(44100, 2);
         _engine = new AudioEngineBridge(capture, _dsp!, playback);
-        _filePlayer = new AudioFilePlayer();
+        _filePlayer = new AudioFilePlayer(_dsp!);
     }
 
     private void OnPlayRequested()

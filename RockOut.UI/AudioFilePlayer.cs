@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using NAudio.Wave;
+using RockOut.Core;
 
 namespace RockOut.UI;
 
@@ -9,6 +10,12 @@ public class AudioFilePlayer : IDisposable
     private IWavePlayer? _waveOut;
     private WaveStream? _reader;
     private string? _currentFile;
+    private readonly DspEngineService _dsp;
+
+    public AudioFilePlayer(DspEngineService dsp)
+    {
+        _dsp = dsp;
+    }
 
     public void Open(string filePath)
     {
@@ -21,7 +28,8 @@ public class AudioFilePlayer : IDisposable
         else
             throw new NotSupportedException("Only WAV and MP3 supported in this demo");
         _waveOut = new WaveOutEvent();
-        _waveOut.Init(_reader);
+        var dspProvider = new DspWaveProvider(_reader.ToSampleProvider().ToWaveProvider(), _dsp);
+        _waveOut.Init(dspProvider);
     }
 
     public void Play()

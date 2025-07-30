@@ -26,8 +26,10 @@
                                 <TextBlock Text="{Binding Gain, StringFormat=F1}" />
                             </Slider.ToolTip>
                         </Slider>
+                        <TextBlock Text="{Binding Gain, StringFormat=F1}" HorizontalAlignment="Center" FontWeight="Bold" Foreground="DarkBlue"/>
                         <TextBlock Text="{Binding Frequency}" HorizontalAlignment="Center"/>
                         <TextBlock Text="dB" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding Gain, StringFormat=F1}" HorizontalAlignment="Center" FontWeight="Bold" Foreground="DarkRed"/>
                     </StackPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
